@@ -10,14 +10,14 @@ void read(char *typed, int *boundary) {
     // type only *boundary characters
     do {
        c=getch(); // capture the user typed character
-       if (isdigit(c)!=0 || isalpha(c)!=0 || isspace(c)!=0 || (c=='-') || (c=='.')){
+       if (isdigit(c)!=0 || isalpha(c)!=0 || isspace(c)!=0 || (c=='-') || (c=='.')) {
           if (i < *boundary){ // if the array index is less than *boundary
               typed[i] = c; // stores in the character array
               i++; // increases the character array index
               printf ("%c", c);
           }
        }
-       else if(c==8&&i) { // if the backspace key is pressed and there are typed characters
+       else if (c==8&&i) { // if the backspace key is pressed and there are typed characters
                 typed[i]='\0'; // the current index of the character array is terminated from the string
                 i--; // the character array index is decreed
                 printf("\b \b"); // The typed character is erased from the screen
@@ -41,14 +41,13 @@ int main(){
 		}
 		else {
 			printf ("\n\nWord/phrase typed: ");
-		   	//for (i=0;i<strlen(typed);i++){
-	    	for (int i=0;i<boundary;i++)
-    	        printf ("%c", typed[i]); // displays the character in the current index of the array
+			//for (i=0;i<strlen(typed);i++){
+	    		for (int i=0;i<boundary;i++)
+    	        		printf ("%c", typed[i]); // displays the character in the current index of the array
 		}	
-			
-    	printf ("\n\n q to quit - ");
-    	//system ("pause");
-    	char aux = getch(); if (aux == 'q') break;
+    		printf ("\n\n q to quit - ");
+    		//system ("pause");
+    		char aux = getch(); if (aux == 'q') break;
 	}
     return 0;
 }
